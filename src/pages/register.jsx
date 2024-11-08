@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import reg from "../assets/hreg.jpeg";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [isRegister, setIsRegister] = useState(false); // true for Register, false for Login
 
   return (
@@ -40,7 +42,7 @@ const Register = () => {
             } py-2 px-4 rounded-md`}
             onClick={() => setIsRegister(true)}
           >
-            Register
+            Sign up
           </button>
         </div>
 
@@ -56,28 +58,42 @@ const Register = () => {
 
         {/* Form */}
         <form className="w-full">
-          <input
-            type="email"
-            placeholder="Enter Email Address"
-            className="w-full mb-4 p-3 border Soralight border-gray-300 rounded-md focus:outline-none focus:border-yellow-500"
-          />
           {isRegister && (
             <>
               <input
-                type="text"
-                placeholder="Enter Your Organisation Name"
-                className="w-full mb-4 p-3 Soralight border border-gray-300 rounded-md focus:outline-none focus:border-yellow-500"
-              />
-              <input
-                type="text"
-                placeholder="Enter Your School Name"
-                className="w-full mb-8 p-3 Soralight border border-gray-300 rounded-md focus:outline-none focus:border-yellow-500"
+                type="email"
+                placeholder="Enter User Name"
+                className="w-full mb-4 p-3 border Soralight border-gray-300 rounded-md focus:outline-none focus:border-yellow-500"
               />
             </>
           )}
-          <button className="bg-main text-white Soralight w-full py-3 rounded-md">
-            {isRegister ? "Register" : "Login"}
-          </button>
+
+          <input
+            type="text"
+            placeholder="Enter Email Address"
+            className="w-full mb-4 p-3 Soralight border border-gray-300 rounded-md focus:outline-none focus:border-yellow-500"
+          />
+          <input
+            type="text"
+            placeholder="Enter Password"
+            className="w-full mb-8 p-3 Soralight border border-gray-300 rounded-md focus:outline-none focus:border-yellow-500"
+          />
+
+          {isRegister ? (
+            <button
+              onClick={() => navigate("/verify-code")}
+              className="bg-main text-white Soralight w-full py-3 rounded-md"
+            >
+              Sign Up
+            </button>
+          ) : (
+            <button
+              onClick={() => navigate("/")}
+              className="bg-main text-white Soralight w-full py-3 rounded-md"
+            >
+              Login
+            </button>
+          )}
         </form>
       </div>
     </div>

@@ -17,7 +17,7 @@ const Navbar = () => {
   }, []);
   const [toggle, setToggle] = useState(false);
   return (
-    <div className=" bg-white py-6 flex items-center justify-between lg:px-16 md:px-8 px-5">
+    <div className=" bg-gray-100 py-6 flex items-center justify-between lg:px-16 md:px-8 px-5">
       <div>
         <p className=" Sora text-3xl">Haybee </p>
         {/* <img className=" w-16 h-11" src={pagelogo} alt="" /> */}
@@ -62,24 +62,20 @@ const Navbar = () => {
         >
           <ul className=" lg:hidden md:hidden grid mt-16 items-center gap-10 justify-center ">
             <li className=" Soralight text-center cursor-pointer text-[#000] text-xl">
-              Photos
+              Furniture
             </li>
             <li className=" Soralight text-center cursor-pointer text-[#000] text-xl">
-              Videos
+              Service
             </li>
             <li className=" Soralight text-center cursor-pointer text-[#000] text-xl">
-              Trending
+              About us
             </li>
             <li className=" Soralight text-center cursor-pointer text-[#000] text-xl">
-              New Contents
+              Contents
             </li>
           </ul>
 
           <div className=" lg:flex md:flex grid justify-center mt-10 items-center gap-10 ">
-            <p className=" Soralight cursor-pointer  text-center text-xl text-[#000]">
-              You have 0 Credit
-            </p>
-
             <div className=" flex justify-center items-center gap-5">
               {" "}
               {/* <Button
